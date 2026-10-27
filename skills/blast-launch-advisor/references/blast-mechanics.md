@@ -4,27 +4,27 @@ Use this reference for product education, route selection and checking whether a
 
 ## Resolve the evidence
 
-In the Blast workspace, find repositories through `repos/README.md`; the workspace root is three parents above this skill directory. Read repositories without changing their branch or files. Outside the workspace, use the corresponding GitHub repositories and public [Blast docs](https://docs.blast.fun/). Private or unavailable source limits confidence; report the gap.
+In the Blast workspace, find repositories through `repos/README.md`; locate that workspace map rather than assuming an installation path. Read repositories without changing their branch or files. Outside the workspace, use the corresponding GitHub repositories and public [Blast docs](https://docs.blast.fun/). Private or unavailable source limits confidence; report the gap.
 
-Initial review: **27 October 2026**. Contracts at `d2917bbb8570fb5a86f065e83c0c1fc1909dfc4a`, docs at `db728d34b46ab7b4e094cf18966888f8d45613a8`, SDK at `4bda8ab307783b34bfe32cf9079db748a5c2f312`, utilities at `8049353ec356f659e2d53ee535f6881b2d703308`. Recheck the intended revision on each advisory engagement. The inspected presale manifest pins vesting utilities to `63b6cf86c0e1a74f699610fe182b1de8d8789a14`; a dependency's latest checkout need not be the version a product uses.
+Initial review: **27 October 2026**. Launch source now lives in public [blast-v2-move](https://github.com/interest-protocol/blast-v2-move) at `c96cd0d7e49dcf6eeb44304f2f54f1cab55f9df5`, imported from contracts `d2917bbb8570fb5a86f065e83c0c1fc1909dfc4a` without Move logic changes; docs at `db728d34b46ab7b4e094cf18966888f8d45613a8`, SDK at `4bda8ab307783b34bfe32cf9079db748a5c2f312`, utilities at `8049353ec356f659e2d53ee535f6881b2d703308`. Recheck the intended revision on each advisory engagement. The inspected presale manifest pins vesting utilities to `63b6cf86c0e1a74f699610fe182b1de8d8789a14`; a dependency's latest checkout need not be the version a product uses.
 
 | Question | Read in the owning repository |
 | --- | --- |
-| Product routing and trust boundaries | `blast-v2-contracts/llms.txt`, then relevant sections of `llms/presale.txt` or `llms/launchpad.txt`; these are large, so use headings/search to select the guide and exact APIs |
-| Presale behavior and validation | `blast-v2-contracts/sui/presale/sources/blast_presale.move`, `creation_policy.move`, `fee_policy.move`; venue and vault behavior in that same package |
-| Curve supply, lifecycle and math | `blast-v2-contracts/sui/launchpad/sources/lib/constants.move`, `allocation.move`, `curve.move`, `launch.move`, `launch_config.move`, `runtime_config.move` |
-| Curve pool migration and fees | `blast-v2-contracts/sui/migrators/sources/`, especially `vault.move`, `lp_fee_policy.move` and the intended venue adapter |
+| Product routing and trust boundaries | [blast-v2-move/llm.txt](https://github.com/interest-protocol/blast-v2-move/blob/main/llm.txt), then relevant sections of `llms/presale.txt` or `llms/launchpad.txt`; these are large, so use headings/search to select the guide and exact APIs |
+| Presale behavior and validation | `blast-v2-move/sui/presale/sources/blast_presale.move`, `creation_policy.move`, `fee_policy.move`; venue and vault behavior in that same package |
+| Curve supply, lifecycle and math | `blast-v2-move/sui/launchpad/sources/lib/constants.move`, `allocation.move`, `curve.move`, `launch.move`, `launch_config.move`, `runtime_config.move` |
+| Curve pool migration and fees | `blast-v2-move/sui/migrators/sources/`, especially `vault.move`, `lp_fee_policy.move` and the intended venue adapter |
 | Vesting semantics | Presale `pay_or_vest`, then its `Move.toml` dependency revision of `blast-util-contracts/sui/vesting/sources/blast_fun_linear_vesting.move` |
 | Exact numerical previews | `blast-v2-sdk/packages/presale/src/math.ts`; curve `packages/launchpad/src/{curve,economics,allocation}.ts`; verify against Move before reuse |
 | Team education | `blast-v2-docs/src/content/docs/teams/{planning,fees,checklist,after-launch}.md`, `users/{allocation,claiming,safety}.md` |
 | Curve education and model | Docs `src/content/docs/launchpad/{launching,tokenomics,safety}.md`, `developers/launchpad-curve.md`, `src/lib/bonding-curve.js` |
-| Deployment and availability | Contracts' package `Published.toml`, `deployments/sui/mainnet/` records and docs `src/content/docs/developers/{addresses,presale-versioning}.md`, plus the intended app/release and live policy objects |
+| Deployment and availability | [Historical contracts publications](https://github.com/interest-protocol/blast-v2-contracts/tree/main/deployments/sui/mainnet/) and [original presale metadata](https://github.com/interest-protocol/blast-v2-contracts/blob/d2917bbb8570fb5a86f065e83c0c1fc1909dfc4a/sui/presale/Published.toml) and docs `src/content/docs/developers/{addresses,presale-versioning}.md`, plus the intended app/release and live policy objects |
 
 Paths in the table are relative to `repos/`. Within a package row, filenames share that row's source directory. For remote source, use `https://github.com/interest-protocol/<repository>/blob/<revision>/<path>`.
 
 Move and tests establish behavior; publication records establish which behavior was published; actual objects and completed events establish state. Docs and generated guides explain those facts. When prose disagrees with source, follow the concrete source and describe the discrepancy. Never combine a historical package address with a newer ABI or policy from another release.
 
-At initial review, the canonical curve and migrators had no committed `Published.toml`; presale records covered multiple publications with different authority/ABI and admission settings. Recheck instead of advertising either as a supported current app flow. Resolve live fees and quote/venue admission only when implementation readiness matters; conceptual planning can use explicit assumptions.
+The new source repository carries no first-party deployment metadata: package addresses and the ACL recipient are zero placeholders. Historical presale records in `blast-v2-contracts` cover multiple publications with different authority/ABI and admission settings. Repository relocation does not deploy, upgrade or move on-chain objects. Recheck instead of advertising either as a supported current app flow. Resolve live fees and quote/venue admission only when implementation readiness matters; conceptual planning can use explicit assumptions.
 
 ## Presale branch
 

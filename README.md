@@ -29,7 +29,12 @@ worked examples, and help us plan allocations, vesting and liquidity.
 The skill includes five references covering Blast mechanics, tokenomics,
 pricing, external precedents and decision artifacts. Its initial source review
 is dated 27 October 2026; it instructs the assistant to recheck current source,
-deployment evidence and policy before recommending executable settings.
+deployment evidence and policy before recommending executable settings. Current
+launchpad, presale and migrator source is in
+[blast-v2-move](https://github.com/interest-protocol/blast-v2-move), starting at
+[llm.txt](https://github.com/interest-protocol/blast-v2-move/blob/main/llm.txt).
+Historical deployment records remain in blast-v2-contracts; the new source
+repository carries no first-party deployment metadata.
 
 ## Maintain the skill
 
