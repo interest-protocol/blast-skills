@@ -24,7 +24,7 @@ Paths in the table are relative to `repos/`. Within a package row, filenames sha
 
 Move and tests establish behavior; publication records establish which behavior was published; actual objects and completed events establish state. Docs and generated guides explain those facts. When prose disagrees with source, follow the concrete source and describe the discrepancy. Never combine a historical package address with a newer ABI or policy from another release.
 
-The new source repository carries no first-party deployment metadata: package addresses and the ACL recipient are zero placeholders. Historical presale records in `blast-v2-contracts` cover multiple publications with different authority/ABI and admission settings. Repository relocation does not deploy, upgrade or move on-chain objects. Recheck instead of advertising either as a supported current app flow. Resolve live fees and quote/venue admission only when implementation readiness matters; conceptual planning can use explicit assumptions.
+The new source repository carries no first-party deployment metadata: package addresses and the ACL recipient are zero placeholders. Historical presale records in `blast-v2-contracts` cover multiple publications with different authority/ABI and admission settings. The original repository also retains its source, tests and documentation. Copying source does not deploy, upgrade or move on-chain objects. Recheck instead of advertising either as a supported current app flow. Resolve live fees and quote/venue admission only when implementation readiness matters; conceptual planning can use explicit assumptions.
 
 ## Presale branch
 
