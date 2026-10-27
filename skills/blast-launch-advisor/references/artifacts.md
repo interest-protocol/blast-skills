@@ -8,7 +8,7 @@ Read when a team needs a shareable plan, numerical comparison, unlock analysis o
 | --- | --- |
 | Explain mechanics or decide the route | Short decision memo; a participant-flow diagram if helpful |
 | Tune allocation, treasury and liquidity together | Scenario table or spreadsheet with editable assumptions and computed outputs |
-| Explore post-launch pool trades and presale-holder exits | [Presale market simulator](https://docs.blast.fun/tools/presale-market-simulator/), adapted from [the original](https://blast-sim.onrender.com/) with the same model and controls |
+| Explore post-launch pool trades and presale-holder exits | [Presale market simulator](https://docs.blast.fun/tools/presale-market-simulator/), adapted from [the original](https://blast-sim.onrender.com/) with validated allocations and explicit pool assumptions |
 | Understand cliffs and tradable float | Cohort unlock CSV and chart, marking assumed claim/migration anchors |
 | Align a team or share with advisors | Launch brief combining decision, economics, terms, risks and next decisions |
 | Prepare implementation | Draft settings sheet with release support and unresolved execution checks |
@@ -17,7 +17,9 @@ Use the established destination. In the Blast workspace, generated models/charts
 
 ## Contents that make a model reviewable
 
-The market simulator models a full-range constant-product pool with stable dollar quote value, input fees paid outside pool depth, manual trades and a random auto market. Preserve supply, presale/LP shares, raise, pool quote, pool fee and trade sequence when sharing a scenario. It does not verify a deployment, model narrow liquidity ranges or account for MEV, other pools or Sui/USD changes. Use the separate [presale price simulator](https://docs.blast.fun/teams/simulator/) for overflow fill and refund examples and the [curve builder](https://docs.blast.fun/launchpad/builder/) for bonding-curve mechanics.
+The market simulator is linked under **Presales → Market simulator**. Preserve supply, accepted raise (excluding overflow), coin decimals, buyer/LP/protocol shares, LP raise share, unlocked buyer percentage, venue, input fee and trade sequence. Allocations use integer basis points and largest-remainder rounding with one modelled recipient; multiple actual recipients can round differently. Default protocol rates are editable assumptions, not live policy.
+
+Cetus/Bluefin trades use continuous constant-product estimates with input fees outside reserves. Aftermath uses a 50/50 model with the DAO input fee outside reserves and an additional retained 0.01% base swap fee. Neither is an executable venue quote: finite ticks, seed residuals, external rounding, deployment policy and live pool fees require separate verification. The unlock percentage is a manual snapshot, not a claims or vesting engine; unlocked buyer + LP value is not circulating market cap. Dollar values assume a stable quote coin. Demand, MEV, other pools and Sui/USD changes are not modeled. Use the separate [presale price simulator](https://docs.blast.fun/teams/simulator/) for overflow fill and refund examples and the [curve builder](https://docs.blast.fun/launchpad/builder/) for bonding-curve mechanics.
 
 - **Decision:** goals and non-negotiables, preferred route, alternative and the fact that would reverse the recommendation.
 - **Inputs:** confirmed versus assumed values, quote asset/decimals, supply, protocol rates with provenance, demand and cost assumptions. Mark editable inputs separately from calculated fields.
