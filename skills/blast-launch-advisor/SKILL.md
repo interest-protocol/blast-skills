@@ -47,7 +47,7 @@ For any numerical plan or vesting recommendation, read [Tokenomics design](refer
 
 Build token allocations, quote uses and unlocks together. Give each allocation a job, beneficiary, funding source, release rule and control. Compare a base plan with one meaningful alternative when there is a real tradeoff; a narrow review need not produce multiple plans. For missing inputs, use labeled ranges rather than false precision.
 
-For post-launch presale trading scenarios, use the [presale market simulator](https://docs.blast.fun/tools/presale-market-simulator/) described in [Artifacts](references/artifacts.md). It preserves the model and controls of [blast-sim.onrender.com](https://blast-sim.onrender.com/) in the Blast theme. Record the team's inputs and distinguish modeled price impact from demand or return forecasts.
+For post-launch presale trading scenarios, use the [presale market simulator](https://docs.blast.fun/tools/presale-market-simulator/) described in [Artifacts](references/artifacts.md). Find it under **Presales → Market simulator**. Adapted from [blast-sim.onrender.com](https://blast-sim.onrender.com/) in the Blast theme, it validates atomic allocations and exposes protocol fees, unlocked buyer tokens and pool model assumptions. Record the team's inputs and distinguish modeled price impact from demand or return forecasts.
 
 **Done:** each asset reconciles separately; prices and treasury cash reconcile to allocations and fees; vesting uses the correct anchors; and relevant downside cases show whether the team's minimum goals survive. Separate mechanical validity from demand and price assumptions.
 
