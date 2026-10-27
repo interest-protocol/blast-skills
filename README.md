@@ -37,4 +37,3 @@ Edit `skills/blast-launch-advisor/SKILL.md` and the relevant linked references
 together. Keep contract behavior, deployment availability, precedents and
 planning assumptions distinct. Public source belongs here; private launch
 inputs and generated client plans stay outside this repository.
-Blast agent skills for launch planning, tokenomics and liquidity
