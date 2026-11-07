@@ -11,10 +11,10 @@ Initial review: **27 October 2026**. Contracts at `d2917bbb8570fb5a86f065e83c0c1
 | Question | Read in the owning repository |
 | --- | --- |
 | Product routing and trust boundaries | `blast-v2-contracts/llms.txt`, then relevant sections of `llms/presale.txt` or `llms/launchpad.txt`; these are large, so use headings/search to select the guide and exact APIs |
-| Presale behavior and validation | `blast-v2-contracts/sui/presale/sources/blast_presale.move`, `creation_policy.move`, `fee_policy.move`; venue and vault behavior in that same package |
-| Curve supply, lifecycle and math | `blast-v2-contracts/sui/launchpad/sources/lib/constants.move`, `allocation.move`, `curve.move`, `launch.move`, `launch_config.move`, `runtime_config.move` |
-| Curve pool migration and fees | `blast-v2-contracts/sui/migrators/sources/`, especially `vault.move`, `lp_fee_policy.move` and the intended venue adapter |
-| Vesting semantics | Presale `pay_or_vest`, then its `Move.toml` dependency on `blast-v2-contracts/sui/vesting/sources/blast_fun_linear_vesting.move` |
+| Presale behavior and validation | `blast-v2-contracts/sui/launch/presale/sources/blast_presale.move`, and the policy modules under `config/` |
+| Curve supply, lifecycle and math | `blast-v2-contracts/sui/launch/launchpad/sources/` (constants under `lib/`, allocation and curve under `math/`, launch under `launch/`, configuration under `config/`) |
+| Curve pool migration and fees | `blast-v2-contracts/sui/launch/migrators/sources/` for the venue adapter and `blast-v2-contracts/sui/launch/vault/sources/` for LP custody and fees |
+| Vesting semantics | Presale `pay_or_vest`, then `blast-v2-contracts/sui/utilities/vesting/sources/blast_fun_linear_vesting.move` |
 | Exact numerical previews | `blast-v2-sdk/packages/presale/src/math.ts`; curve `packages/launchpad/src/{curve,economics,allocation}.ts`; verify against Move before reuse |
 | Team education | `blast-v2-docs/src/content/docs/teams/{planning,fees,checklist,after-launch}.md`, `users/{allocation,claiming,safety}.md` |
 | Curve education and model | Docs `src/content/docs/launchpad/{launching,tokenomics,safety}.md`, `developers/launchpad-curve.md`, `src/lib/bonding-curve.js` |
