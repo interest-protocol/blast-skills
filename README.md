@@ -1,6 +1,7 @@
 # Blast Skills
 
-Agent skills for teams planning a coin launch on Blast.
+Agent skills for launching coins on Blast and contributing to its SDK and
+smart contracts.
 
 ## Blast Launch Advisor
 
@@ -31,9 +32,29 @@ pricing, external precedents and decision artifacts. Its initial source review
 is dated 27 October 2026; it instructs the assistant to recheck current source,
 deployment evidence and policy before recommending executable settings.
 
-## Maintain the skill
+## Blast Contribute
 
-Edit `skills/blast-launch-advisor/SKILL.md` and the relevant linked references
-together. Keep contract behavior, deployment availability, precedents and
-planning assumptions distinct. Public source belongs here; private launch
-inputs and generated client plans stay outside this repository.
+Find an actionable GitHub issue in the Blast TypeScript SDK or Sui Move
+contracts, implement and verify a focused fix, and prepare a pull request.
+Read the [contribution skill](skills/blast-contribute/SKILL.md) for the full
+workflow.
+
+Install with the skills CLI.
+
+```sh
+npx skills add interest-protocol/blast-skills --skill blast-contribute
+```
+
+Then ask your assistant to find an issue or give it an issue URL.
+
+```text
+Use Blast Contribute to find an actionable SDK or contracts issue, fix it,
+run the relevant checks, and open a draft PR.
+```
+
+## Maintain the skills
+
+Edit the relevant `SKILL.md` and any affected linked references together.
+For launch guidance, keep contract behavior, deployment availability,
+precedents and planning assumptions distinct. Keep private launch inputs
+and generated client plans outside this repository.
